@@ -8,12 +8,15 @@ function onInputBlur(event) {
     const inputBlurLength = event.currentTarget.value.length;
     console.log(inputBlurLength);
     
-    if (inputBlurLength > inputLength) {
-        inputEl.classList.remove('valid');
-        inputEl.classList.add('invalid');
-    } else {
+    if (inputBlurLength === 0) {
+        inputEl.classList.remove('invalid', 'valid');
+    }
+    else if (inputBlurLength === inputLength) {
         inputEl.classList.remove('invalid');
-        inputEl.classList.add('valid')
+        inputEl.classList.add('valid');
+    } else  {
+        inputEl.classList.remove('valid');
+        inputEl.classList.add('invalid')
     }
     
 }
